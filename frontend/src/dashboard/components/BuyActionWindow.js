@@ -16,7 +16,7 @@ const handleBuyClick = async () => {
     const token = localStorage.getItem("token");
 
     await axios.post(
-      "http://localhost:3002/newOrder",
+      "https://stockora-backend.onrender.com/newOrder",
       {
         name: uid,
         qty: Number(stockQuantity),

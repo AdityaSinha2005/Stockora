@@ -9,7 +9,7 @@ const Orders = () => {
 
     axios
       .get(
-        "http://localhost:3002/allOrders",
+        "https://stockora-backend.onrender.com/allOrders",
         {
           headers: {
             Authorization: `Bearer ${token}`,
