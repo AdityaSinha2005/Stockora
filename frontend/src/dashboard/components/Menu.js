@@ -107,9 +107,9 @@ const Menu = () => {
             </NavLink>
           </li>
         </ul>
-
-        <hr className="dashboard-divider-vertical"/>
-
+      </div>
+       
+       <div className="profile-row">
         <div className="profile" >
         <div className="avatar">
           {username.charAt(0).toUpperCase()}
@@ -125,7 +125,7 @@ const Menu = () => {
         onClick={handleLogout}
       >
         Logout
-</button>
+      </button>
       </div>
     </div>
   );
