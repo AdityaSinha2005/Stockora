@@ -1,14 +1,30 @@
-import React from 'react'
+import React from "react";
 import { useLocation, Link } from "react-router-dom";
+import Collapse from "bootstrap/js/dist/collapse";
 
 function Navbar() {
   const location = useLocation();
+
+   const closeMenu = () => {
+    const navbar = document.getElementById("navbarSupportedContent");
+
+    if (navbar && navbar.classList.contains("show")) {
+      const bsCollapse =
+        Collapse.getInstance(navbar) || new Collapse(navbar);
+      bsCollapse.hide();
+    }
+  };
+
+  if (location.pathname.startsWith("/dashboard")) {
+    return null;
+  }
 
   if (location.pathname.startsWith("/dashboard")) {
     return null;
   }
 
   return (
+    
     <nav
       className="navbar navbar-expand-lg border-bottom"
       style={{ backgroundColor: "#FFF" }}
@@ -42,37 +58,37 @@ function Navbar() {
           <ul className="navbar-nav">
 
             <li className="nav-item">
-              <Link className="nav-link" to="/signup">
+              <Link className="nav-link" to="/signup" onClick={closeMenu}>
                 Signup
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
+              <Link className="nav-link" to="/login" onClick={closeMenu}>
                 Login
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link className="nav-link" to="/about" onClick={closeMenu}>
                 About
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/product">
+              <Link className="nav-link" to="/product" onClick={closeMenu}>
                 Product
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/pricing">
+              <Link className="nav-link" to="/pricing" onClick={closeMenu}>
                 Pricing
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/support">
+              <Link className="nav-link" to="/support" onClick={closeMenu}>
                 Support
               </Link>
             </li>
